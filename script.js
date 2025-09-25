@@ -9,3 +9,4 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   e.preventDefault();
   alert("Terima kasih sudah konfirmasi kehadiran!");
 });
+
