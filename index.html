@@ -39,558 +39,572 @@
 
 </style>
 </head>
-<body class="bg-gradient-to-br from-pink-100 via-purple-50 to-indigo-100 flower-bg">
+    <body class="bg-gradient-to-br from-pink-100 via-purple-50 to-indigo-100 flower-bg">
 
-    <!-- Loading Screen -->
-    <div id="loading" class="fixed inset-0 flex items-center justify-center bg-[#F3E8DC] z-50">
-        <div class="text-center text-pink-700">
-            <div class="text-6xl animate-pulse mb-4">💕</div>
-            <p class="text-lg">Memuat undangan...</p>
+        <!-- Loading Screen -->
+        <div id="loading" class="fixed inset-0 flex items-center justify-center bg-[#F3E8DC]/80 backdrop-blur-sm z-50">
+            <div class="text-center text-pink-700">
+                <div class="text-6xl animate-pulse mb-4">🌹</div>
+                <p class="text-lg">Memuat undangan...</p>
+            </div>
         </div>
-    </div>
 
-    <audio id="backSound" src="backsound.mp3" loop></audio>
+        <audio id="backSound" src="backsound.mp3" loop></audio>
 
-        <!-- Music Button -->
-    <button id="musicBtn" class="music-btn bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300" aria-label="Toggle music" style="display:none; border-bottom: 2px solid transparent;">
-        <svg id="musicIcon" class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-        </svg>
+            <!-- Music Button -->
+        <button id="musicBtn" class="music-btn bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300" aria-label="Toggle music" style="display:none; border-bottom: 2px solid transparent;">
+            <svg id="musicIcon" class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+            </svg>
+        </button>
+
+        <!-- Cover Section -->
+        <section id="cover" class="min-h-screen relative overflow-hidden bg-cover bg-center" style="background-image: url('misaa1.jpg');">
+            <div class="relative min-h-screen flex flex-col justify-start items-center pt-16 px-4 z-10">
+                <div class="text-center max-w-md mx-auto bg-transparent p-8 shadow-none">
+                    <div class="absolute top-6 left-6 text-left z-20">
+                        <h1 class="script-font text-5xl md:text-3xl font-bold text-gray-800 mt-12">The Wedding of</h1>
+                        <h2 class="script-font text-3xl md:text-3xl font-bold text-pink-600">Novita Sari & Misa</h2>
+                        
+                    </div>
+
+                </div>
+                <div class="bg-white/50 p-2 rounded-t-[80px] shadow-lg w-full absolute bottom-0 left-0 z-20 backdrop-blur-md">
+                    <div class="max-w-md mx-auto text-center">
+                        <p class="text-gray-600 mb-2">Kepada Yth.</p>
+                        <p class="text-lg font-semibold text-gray-800 mb-6" id="guestName">Bapak/Ibu/Saudara/i</p>
+                        <button id="openInvitation" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 btn-animate pulse-heart inline-flex items-center justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8a9 9 0 100-18 9 9 0 000 18z" />
+                            </svg>
+                            <span>Buka Undangan</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navbar -->
+        <nav id="mainNav" class="fixed bottom-0 left-0 w-full bg-[#F2AEBB] backdrop-blur-md shadow-t py-2 hidden z-50">
+        <ul class="max-w-md mx-auto flex justify-between px-8">
+            <li>
+            <a href="#home" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300 ">
+            <div class="bg-[#F2AEBB] p-1 rounded-md">
+                <img src="iconhome.png" alt="Home Icon" class="h-6 w-6 mb-1 object-contain" />
+            </div>
+            <span class="text-xs font-semibold">Home</span>
+            </a>
+            </li>
+            <li>
+            <a href="#profil" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
+            <div class="bg-[#F2AEBB] p-1 rounded-md">
+                <img src="profil.png" alt="Home Icon" class="h-6 w-6 mb-1 object-contain" />
+            </div>
+                <span class="text-xs font-semibold">Profil</span>
+            </a>
+            </li>
+            <li>
+            <a href="#acara" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
+                 <div class="bg-[#F2AEBB] p-1 rounded-md">
+                <img src="acara.png" alt="Home Icon" class="h-6 w-6 mb-1 object-contain" />
+            </div>
+                <span class="text-xs font-semibold">Acara</span>
+            </a>
+            </li>
+             <li>
+            <a href="#galeri" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
+                 <div class="bg-[#F2AEBB] p-1 rounded-md">
+                <img src="galery.png" alt="Home Icon" class="h-6 w-6 mb-1 object-contain" />
+            </div>
+                <span class="text-xs font-semibold">galeri</span>
+            </a>
+            </li>
+             <li>
+            <a href="#ucapan" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
+                 <div class="bg-[#F2AEBB] p-1 rounded-md">
+                <img src="pesan.png" alt="Home Icon" class="h-6 w-6 mb-1 object-contain" />
+            </div>
+                <span class="text-xs font-semibold">ucapan</span>
+            </a>
+            </li>
+        </ul>
+        </nav>
+
+        <script>
+        const navItems = document.querySelectorAll('#mainNav .nav-item');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Hapus transform naik dan background putih dari semua icon-wrapper
+            navItems.forEach(i => {
+                i.classList.remove('-translate-y-5');
+                const iconWrapper = i.querySelector('.icon-wrapper');
+                if (iconWrapper) {
+                iconWrapper.classList.remove('shadow-lg');
+                }
+            });
+            // Tambah transform naik dan background putih dengan shadow ke item yang diklik
+            this.classList.add('-translate-y-5');
+            const iconWrapper = this.querySelector('.icon-wrapper');
+            if (iconWrapper) {
+                iconWrapper.classList.add('shadow-lg');
+            }
+            // Scroll ke section tujuan
+            const targetId = this.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            });
+        });
+
+        // Set default aktif untuk item pertama saat halaman dimuat
+        if (navItems.length > 0) {
+            navItems[0].classList.add('-translate-y-5');
+            const iconWrapper = navItems[0].querySelector('.icon-wrapper');
+            if (iconWrapper) {
+            iconWrapper.classList.add('shadow-lg');
+            }
+        }
+        </script>
+
+        <!-- Main Content -->
+        <div id="mainContent" class="hidden pb-16">
+            <section id="home" class="relative min-h-screen overflow-hidden">
+            <!-- Video background -->
+            <video id="bgVideo" muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="home.mp4" type="video/mp4">
+            </video>
+            </section>
+
+            <script>
+            const video = document.getElementById('bgVideo');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                    video.currentTime = 0; // Reset ke awal kalau keluar dari tampilan
+                }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(document.getElementById('home'));
+            </script>
+            <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#F2AEBB]">
+                <div class="max-w-xl text-center">
+                    <blockquote class="text-lg italic text-gray-700 leading-relaxed">
+                    “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tentram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.<br>
+                    Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.<br><br>
+                    Dan orang-orang yang berkata: "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri kami dan keturunan kami sebagai penyejuk mata (penghilang duka), dan jadikanlah kami imam bagi orang-orang yang bertakwa."<br>
+                    <span class="font-bold mt-4 block text-gray-900">QS Ar-Rum: 21-22</span>
+                    </blockquote>
+                </div>
+            </section>
+
+            <section id="profil" class="relative min-h-screen overflow-hidden">
+            <!-- Video background -->
+            <video id="profilVideo" muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="tampilan2.mp4" type="video/mp4">
+            </video>
+            </section>
+
+            <script>
+            const video2 = document.getElementById('profilVideo');
+            const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video2.play();
+                } else {
+                    video2.pause();
+                    video2.currentTime = 0; // Reset ke awal kalau keluar dari tampilan
+                }
+                });
+            }, { threshold: 0.5 });
+
+            observer2.observe(document.getElementById('profil'));
+            </script>
+
+            <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#F2AEBB] ">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="script-font text-4xl font-bold text-gray-800 mb-8">Menuju Hari Bahagia</h2>
+                    <div id="countdown" class="grid grid-cols-4 gap-4 mb-8">
+                        <div class="countdown-item rounded-2xl p-4 shadow-lg">
+                            <div id="days" class="text-3xl font-bold text-pink-600">00</div>
+                            <div class="text-sm text-gray-600">Hari</div>
+                        </div>
+                        <div class="countdown-item rounded-2xl p-4 shadow-lg">
+                            <div id="hours" class="text-3xl font-bold text-pink-600">00</div>
+                            <div class="text-sm text-gray-600">Jam</div>
+                        </div>
+                        <div class="countdown-item rounded-2xl p-4 shadow-lg">
+                            <div id="minutes" class="text-3xl font-bold text-pink-600">00</div>
+                            <div class="text-sm text-gray-600">Menit</div>
+                        </div>
+                        <div class="countdown-item rounded-2xl p-4 shadow-lg">
+                            <div id="seconds" class="text-3xl font-bold text-pink-600">00</div>
+                            <div class="text-sm text-gray-600">Detik</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+            // Target tanggal 22 Desember 2025 pukul 00:00:00
+            const targetDate = new Date('December 8, 2025 00:00:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+
+                if (diff < 0) {
+                // Jika waktu sudah lewat, set semua 0
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                clearInterval(intervalId);
+                return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                // Format dua digit dengan leading zero
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            // Update setiap detik
+            const intervalId = setInterval(updateCountdown, 1000);
+
+            // Jalankan langsung agar tidak delay 1 detik
+            updateCountdown();
+            </script>
+
+            <section id="acara" class="relative min-h-screen overflow-hidden flex flex-col items-center justify-center p-6 fade-in text-center space-y-8">
+
+            <!-- ✅ VIDEO BACKGROUND -->
+            <video id="acaraVideo" muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="tampilan03.mp4" type="video/mp4" />
+                Browser kamu tidak mendukung video ini.
+            </video>
+            </section>
+
+            <script>
+            const videoAcara = document.getElementById('acaraVideo');
+            const observerAcara = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    videoAcara.play();
+                } else {
+                    videoAcara.pause();
+                    videoAcara.currentTime = 0;
+                }
+                });
+            }, { threshold: 0.5 });
+
+            observerAcara.observe(document.getElementById('acara'));
+            </script>
+
+
+            <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#F2AEBB]">
+                <div class="max-w-4xl mx-auto text-center w-full">
+                    <h2 class="script-font text-4xl font-bold text-gray-800 mb-8">Lokasi Acara</h2>
+                    <p class="text-gray-700 text-lg mb-6">
+                    <strong>Alamat:<br></strong> Telaga Murni No.58 Rt004/01.Cikarang Barat, Bekasi
+                    </p>
+                    <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-4 shadow-xl" style="height: 400px; position: relative;">
+                    <iframe
+                        src="https://maps.google.com/maps?q=-6.2680517,107.1175371&z=15&output=embed"
+                        style="border:0; width:100%; height:100%; border-radius: 24px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Lokasi Acara"
+                    ></iframe>
+                    </div>
+                    <a href="https://www.google.com/maps?q=-6.2680517,107.1175371" target="_blank" class="inline-block mt-4 text-pink-600 font-semibold hover:underline">
+                    Lihat Lokasi Acara
+                    </a>
+                    <p class="text-pink-600">-------------------</p>
+                </div>
+            </section>
+
+        <section id="galeri" class="relative min-h-screen overflow-hidden flex flex-col items-center justify-center p-6 fade-in text-center space-y-8">
+
+        <!-- ✅ VIDEO BACKGROUND -->
+        <video id="galeriVideo" muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="tampilan04.mp4" type="video/mp4" />
+            Browser kamu tidak mendukung video ini.
+        </video>
+        </section>
+
+        <script>
+        const videoGaleri = document.getElementById('galeriVideo');
+        const observerGaleri = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                videoGaleri.play();
+            } else {
+                videoGaleri.pause();
+                videoGaleri.currentTime = 0;
+            }
+            });
+        }, { threshold: 0.5 });
+
+        observerGaleri.observe(document.getElementById('galeri'));
+        </script>
+
+
+            <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#F2AEBB]">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="script-font text-4xl font-bold text-gray-800 mb-12">Doa Pengantin</h2>
+                    <p class="text-4xl font-serif text-pink-600 font-extrabold mb-8" dir="rtl" lang="ar" aria-label="Doa Pengantin">
+                    رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+                    </p>
+                    <blockquote class="max-w-xl mx-auto text-lg text-gray-700 italic leading-relaxed">
+                    "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri kami dan keturunan kami sebagai penyejuk mata (penghilang duka), dan jadikanlah kami imam bagi orang-orang yang bertakwa." (QS. Al-Furqan: 74)
+                    </blockquote>
+                </div>
+            </section>
+
+<section id="gift" class="relative min-h-screen overflow-hidden flex flex-col items-center justify-center p-6 text-center space-y-6">
+
+  <!-- 🎥 Video Background -->
+  <video id="giftVideo" muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="tampilan05.mp4" type="video/mp4" />
+    Browser kamu tidak mendukung video ini.
+  </video>
+
+  <!-- 🌫️ Optional: overlay tipis biar teks kebaca -->
+<!-- <div class="absolute inset-0 bg-black/20 z-0"></div> -->
+
+  <!-- ✨ Konten Tombol -->
+  <!-- <div class="relative z-10 flex flex-col items-center gap-4">
+
+    <button onclick="navigator.clipboard.writeText('7207452526')"
+      class="text-lg text-white font-semibold bg-pink-600/80 hover:bg-pink-700/90 px-6 py-2 rounded-full transition duration-300 shadow-md">
+      Copy Rekening BSI - Novita Sari
     </button>
 
-    <!-- Cover Section -->
-    <section id="cover" class="min-h-screen relative overflow-hidden bg-cover bg-center" style="background-image: url('foto1.jpg');">
-        <div class="relative min-h-screen flex flex-col justify-start items-center pt-16 px-4 z-10">
-            <div class="text-center max-w-md mx-auto bg-transparent p-8 shadow-none">
-                <div class="mb-6">
-                    <svg class="w-16 h-16 mx-auto text-pink-500 -mb-5 -mt-20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                    </svg>
-                </div>
-                <h1 class="script-font text-4xl font-bold text-gray-800 mb-2">The Wedding of</h1>
-                <h2 class="script-font text-4xl font-bold text-pink-600 mb-4">Novita Sari & Misa</h2>
-            </div>
-            <div class="bg-white/50 p-2 rounded-t-[80px] shadow-lg w-full absolute bottom-0 left-0 z-20 backdrop-blur-md">
-                <div class="max-w-md mx-auto text-center">
-                    <p class="text-gray-600 mb-2">Kepada Yth.</p>
-                    <p class="text-lg font-semibold text-gray-800 mb-6" id="guestName">Bapak/Ibu/Saudara/i</p>
-                    <button id="openInvitation" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 btn-animate pulse-heart inline-flex items-center justify-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8a9 9 0 100-18 9 9 0 000 18z" />
-                        </svg>
-                        <span>Buka Undangan</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <button onclick="navigator.clipboard.writeText('5222288428')"
+      class="text-lg text-white font-semibold bg-blue-600/80 hover:bg-blue-700/90 px-6 py-2 rounded-full transition duration-300 shadow-md">
+      Copy Rekening BCA - Misa
+    </button>
 
-    <!-- Navbar -->
-<nav id="mainNav" class="fixed bottom-0 left-0 w-full bg-white backdrop-blur-md shadow-t py-2 hidden z-50">
-  <ul class="max-w-md mx-auto flex justify-between px-8">
-    <li>
-      <a href="#home" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
-        <div class="icon-wrapper rounded-md bg-white p-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h5m-5 0L5 21h14L13 11z" />
-          </svg>
-        </div>
-        <span class="text-xs font-semibold">Home</span>
-      </a>
-    </li>
-    <li>
-      <a href="#profil" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
-        <div class="icon-wrapper rounded-md bg-white p-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A7.964 7.964 0 0112 15a7.964 7.964 0 016.879 2.804M12 12a5 5 0 100-10 5 5 0 000 10z" />
-          </svg>
-        </div>
-        <span class="text-xs font-semibold">Profil</span>
-      </a>
-    </li>
-    <li>
-      <a href="#acara" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
-        <div class="icon-wrapper rounded-md bg-white p-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8a4 4 0 118 0 4 4 0 01-8 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4a4 4 0 014-4h10a4 4 0 014 4v4" />
-          </svg>
-        </div>
-        <span class="text-xs font-semibold">Acara</span>
-      </a>
-    </li>
-    <li>
-      <a href="#galeri" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
-        <div class="icon-wrapper rounded-md bg-white p-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a4 4 0 004 4h10a4 4 0 004-4V7H3z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 7-4" />
-          </svg>
-        </div>
-        <span class="text-xs font-semibold">Galeri</span>
-      </a>
-    </li>
-    <li>
-      <a href="#ucapan" class="nav-item flex flex-col items-center text-gray-600 hover:text-pink-600 cursor-pointer transition-transform duration-300">
-        <div class="icon-wrapper rounded-md bg-white p-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8a9 9 0 100-18 9 9 0 000 18z" />
-          </svg>
-        </div>
-        <span class="text-xs font-semibold">Ucapan</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<script>
-  const navItems = document.querySelectorAll('#mainNav .nav-item');
-
-  navItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      // Hapus transform naik dan background putih dari semua icon-wrapper
-      navItems.forEach(i => {
-        i.classList.remove('-translate-y-3');
-        const iconWrapper = i.querySelector('.icon-wrapper');
-        if (iconWrapper) {
-          iconWrapper.classList.remove('shadow-lg');
-        }
-      });
-      // Tambah transform naik dan background putih dengan shadow ke item yang diklik
-      this.classList.add('-translate-y-3');
-      const iconWrapper = this.querySelector('.icon-wrapper');
-      if (iconWrapper) {
-        iconWrapper.classList.add('shadow-lg');
-      }
-      // Scroll ke section tujuan
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // Set default aktif untuk item pertama saat halaman dimuat
-  if (navItems.length > 0) {
-    navItems[0].classList.add('-translate-y-3');
-    const iconWrapper = navItems[0].querySelector('.icon-wrapper');
-    if (iconWrapper) {
-      iconWrapper.classList.add('shadow-lg');
-    }
-  }
-</script>
-
-
-
-    <!-- Main Content -->
-<div id="mainContent" class="hidden pb-16">
-        <section id="home" class="min-h-screen fade-in bg-cover bg-center" style="background-image: url('home1.png');">
-        <!-- Jika ingin konten teks di atas gambar, bisa ditambahkan di sini -->
-        </section>
-        <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#f5f5dc]">
-            <div class="max-w-xl text-center">
-                <blockquote class="text-lg italic text-gray-700 leading-relaxed">
-                “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tentram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.<br>
-                Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.<br><br>
-                Dan orang-orang yang berkata: "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri kami dan keturunan kami sebagai penyejuk mata (penghilang duka), dan jadikanlah kami imam bagi orang-orang yang bertakwa."<br>
-                <span class="font-bold mt-4 block text-gray-900">QS Ar-Rum: 21-22</span>
-                </blockquote>
-            </div>
-        </section>
-
-       <section id="profil" class="min-h-screen flex flex-col items-center justify-center p-6 fade-in text-center space-y-8" style="background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('bgr.png'); background-size: cover; background-position: center;">
-            <div class="text-4xl font-serif text-pink-600 font-extrabold" dir="rtl" lang="ar" aria-label="Bismillah">
-                بسم الله الرحمن الرحيم
-            </div>
-            <div class="max-w-xl text-gray-700 text-lg leading-relaxed">
-                Assalamu'alaikum Warahmatullaahi Wabarakaatuh<br><br>
-                Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri <strong>Resepsi Pernikahan Putra-Putri kami</strong>.
-            </div>
-            <div class="max-w-4xl mx-auto w-full mt-12">
-                <h2 class="script-font text-4xl font-bold text-center text-gray-800 mb-12">Mempelai</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                
-                <!-- Bride Novita Sari -->
-                <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl card-hover slide-in-left border-t-8 border-pink-500">
-                    <img src="novi.png" alt="Foto Novita Sari" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-pink-200 shadow-lg sparkle" />
-                    <h3 class="script-font text-3xl font-bold text-pink-600 mb-2">Novita Sari</h3>
-                    <p class="text-gray-600 mb-4">Putri dari</p>
-                    <p class="font-semibold text-gray-800">Bapak Suryanto & Ibu Siti Aminah</p>
-                </div>
-            <div class="flex items-center justify-center text-6xl font-extrabold text-gray-400 select-none">
-                &ndash; & &ndash;
-            </div>
-                <!-- Groom Misa -->
-                <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl card-hover slide-in-right border-t-8 border-blue-500">
-                    <img src="misa.png" alt="Foto Misa" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-blue-200 shadow-lg sparkle" />
-                    <h3 class="script-font text-3xl font-bold text-blue-600 mb-2">Misa</h3>
-                    <p class="text-gray-600 mb-4">Putra dari</p>
-                    <p class="font-semibold text-gray-800">Bapak Hasan Basri & Ibu Fatimah</p>
-                </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#f5f5dc]">
-    <div class="max-w-2xl mx-auto text-center">
-        <h2 class="script-font text-4xl font-bold text-gray-800 mb-8">Menuju Hari Bahagia</h2>
-        <div id="countdown" class="grid grid-cols-4 gap-4 mb-8">
-            <div class="countdown-item rounded-2xl p-4 shadow-lg">
-                <div id="days" class="text-3xl font-bold text-pink-600">00</div>
-                <div class="text-sm text-gray-600">Hari</div>
-            </div>
-            <div class="countdown-item rounded-2xl p-4 shadow-lg">
-                <div id="hours" class="text-3xl font-bold text-pink-600">00</div>
-                <div class="text-sm text-gray-600">Jam</div>
-            </div>
-            <div class="countdown-item rounded-2xl p-4 shadow-lg">
-                <div id="minutes" class="text-3xl font-bold text-pink-600">00</div>
-                <div class="text-sm text-gray-600">Menit</div>
-            </div>
-            <div class="countdown-item rounded-2xl p-4 shadow-lg">
-                <div id="seconds" class="text-3xl font-bold text-pink-600">00</div>
-                <div class="text-sm text-gray-600">Detik</div>
-            </div>
-        </div>
-    </div>
+  </div> -->
 </section>
 
+
 <script>
-  // Target tanggal 22 Desember 2025 pukul 00:00:00
-  const targetDate = new Date('December 22, 2025 00:00:00').getTime();
+  const videoGift = document.getElementById('giftVideo');
+  const observerGift = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        videoGift.play();
+      } else {
+        videoGift.pause();
+        videoGift.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 });
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const diff = targetDate - now;
-
-    if (diff < 0) {
-      // Jika waktu sudah lewat, set semua 0
-      document.getElementById('days').textContent = '00';
-      document.getElementById('hours').textContent = '00';
-      document.getElementById('minutes').textContent = '00';
-      document.getElementById('seconds').textContent = '00';
-      clearInterval(intervalId);
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    // Format dua digit dengan leading zero
-    document.getElementById('days').textContent = days.toString().padStart(2, '0');
-    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-  }
-
-  // Update setiap detik
-  const intervalId = setInterval(updateCountdown, 1000);
-
-  // Jalankan langsung agar tidak delay 1 detik
-  updateCountdown();
+  observerGift.observe(document.getElementById('gift'));
 </script>
 
 
+            <section  id="ucapan" class="py-16 px-4 bg-[#F2AEBB] max-w-4xl mx-auto">
+            <h2 class="script-font text-4xl font-bold text-center text-gray-800 mb-12">Ucapan & Doa</h2>
 
-       <section id="acara" class="min-h-screen flex flex-col items-center justify-center p-6 fade-in text-center space-y-8" style="background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('bg2.png'); background-size: cover; background-position: center;">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="script-font text-4xl font-bold text-center text-gray-800 mb-12">Detail Acara</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Akad -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl text-center card-hover zoom-in">
-                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-6 flex items-center justify-center float">
-                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Akad Nikah</h3>
-                        <div class="space-y-2 text-gray-600">
-                            <p class="font-semibold">Sabtu, 15 Juni 2024</p>
-                            <p>08.00 - 10.00 WIB</p>
-                            <p class="mt-4">Masjid Al-Ikhlas</p>
-                            <p>Jl. Merdeka No. 123, Jakarta</p>
-                        </div>
+            <form id="wishForm" class="mb-12 max-w-xl mx-auto space-y-4 text-left">
+                <label class="block font-semibold text-gray-700" for="nameInput">Nama</label>
+                <input id="nameInput" type="text" required placeholder="Masukkan nama" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+
+                <label class="block font-semibold text-gray-700" for="messageInput">Ucapan & Doa</label>
+                <textarea id="messageInput" rows="3" required placeholder="Tulis ucapan & doa Anda" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+
+                <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded-md transition">Kirim</button>
+            </form>
+
+            <div id="messagesList" class="space-y-6 px-4 max-h-[500px] overflow-y-auto">
+                <!-- Dummy initial messages -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    M
                     </div>
-
-                    <!-- Resepsi -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl text-center card-hover zoom-in">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-6 flex items-center justify-center float">
-                            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Resepsi</h3>
-                        <div class="space-y-2 text-gray-600">
-                            <p class="font-semibold">Sabtu, 15 Juni 2024</p>
-                            <p>11.00 - 15.00 WIB</p>
-                            <p class="mt-4">Gedung Serbaguna</p>
-                            <p>Jl. Kemerdekaan No. 456, Jakarta</p>
-                        </div>
+                    <div class="flex-1 text-left">
+                    <h4 class="font-semibold text-gray-800">Misa</h4>
+                    <p class="text-gray-600 mt-2">Best Wishes</p>
+                    <p class="text-sm text-gray-400 mt-2">22 September 2025</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#f5f5dc]">
-            <div class="max-w-4xl mx-auto text-center w-full">
-                <h2 class="script-font text-4xl font-bold text-gray-800 mb-8">Lokasi Acara</h2>
-                <p class="text-gray-700 text-lg mb-6">
-                <strong>Alamat:<br></strong> Kampung Rawabanteng, Desa Cibuntu, Kecamatan Cibitung, Kabupaten Bekasi, Jawa Barat
-                </p>
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-4 shadow-xl" style="height: 400px; position: relative;">
-                <iframe
-                    src="https://maps.google.com/maps?q=-6.2680517,107.1175371&z=15&output=embed"
-                    style="border:0; width:100%; height:100%; border-radius: 24px;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Lokasi Acara"
-                ></iframe>
                 </div>
-                <a href="https://www.google.com/maps?q=-6.2680517,107.1175371" target="_blank" class="inline-block mt-4 text-pink-600 font-semibold hover:underline">
-                Lihat Lokasi Acara
-                </a>
-                <p class="text-pink-600">-------------------</p>
-            </div>
-        </section>
 
-       <section id="galeri" class="min-h-screen flex flex-col items-center justify-center p-6 fade-in text-center space-y-8" style="background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('bgr.png'); background-size: cover; background-position: center;">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="script-font text-4xl font-bold text-gray-800 mb-12">Galeri</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg p-4 shadow-lg">
-                    <img src="galeri1.jpg" alt="Galeri 1" class="w-full h-auto rounded-md object-cover" />
-                </div>
-                <div class="bg-white rounded-lg p-4 shadow-lg">
-                    <img src="galeri2.jpg" alt="Galeri 2" class="w-full h-auto rounded-md object-cover" />
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="min-h-screen flex items-center justify-center p-6 fade-in bg-[#f5f5dc]">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="script-font text-4xl font-bold text-gray-800 mb-12">Doa Pengantin</h2>
-                <p class="text-4xl font-serif text-pink-600 font-extrabold mb-8" dir="rtl" lang="ar" aria-label="Doa Pengantin">
-                رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
-                </p>
-                <blockquote class="max-w-xl mx-auto text-lg text-gray-700 italic leading-relaxed">
-                "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri kami dan keturunan kami sebagai penyejuk mata (penghilang duka), dan jadikanlah kami imam bagi orang-orang yang bertakwa." (QS. Al-Furqan: 74)
-                </blockquote>
-            </div>
-        </section>
-
-        <section class="min-h-screen flex flex-col items-center justify-center p-6 fade-in text-center space-y-8" style="background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('bg2.png'); background-size: cover; background-position: center;">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="script-font text-4xl font-bold text-center text-gray-800 mb-12">Wedding Gift</h2>
-                <p class="text-center mb-10 text-gray-700 max-w-xl mx-auto">
-                Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br />
-                Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.
-                </p>
-                <div class="grid md:grid-cols-2 gap-8">
-                <!-- Card 1 BSI Novita Sari -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-10 shadow-lg space-y-6 min-w-[320px] min-h-[180px]">
-                    <div class="flex items-stretch justify-between">
-                        <div>
-                        <p class="font-semibold text-pink-600 font-bold text-2xl flex flex-col">
-                            7207452526<br>BSI Novitasari<br>
-                        </p>
-                        <button onclick="navigator.clipboard.writeText('7207452526')" class="mt-4 text-base text-pink-600 hover:text-pink-800 underline cursor-pointer">
-                            Copy No Rekening
-                        </button>
-                        </div>
-                        <div class="text-pink-600 text-5xl font-extrabold select-none flex items-center">
-                        💳
-                        </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    N
                     </div>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-10 shadow-lg space-y-6 min-w-[320px] min-h-[180px]">
-                    <div class="flex items-stretch justify-between">
-                        <div>
-                        <p class="font-semibold text-blue-600 font-bold text-2xl flex flex-col">
-                            5222288428<br>BCA Misa<br>
-                        </p>
-                        <button onclick="navigator.clipboard.writeText('5222288428')" class="mt-4 text-base text-blue-600 hover:text-blue-800 underline cursor-pointer">
-                            Copy No Rekening
-                        </button>
-                        </div>
-                        <div class="text-blue-600 text-5xl font-extrabold select-none flex items-center">
-                        💳
-                        </div>
-                    </div>
+                    <div class="flex-1 text-left">
+                    <h4 class="font-semibold text-gray-800">No Name</h4>
+                    <p class="text-gray-600 mt-2">Test</p>
+                    <p class="text-sm text-gray-400 mt-2">30 Juni 2025</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section  id="ucapan" class="py-16 px-4 bg-[#f5f5dc] max-w-4xl mx-auto">
-        <h2 class="script-font text-4xl font-bold text-center text-gray-800 mb-12">Ucapan & Doa</h2>
-
-        <form id="wishForm" class="mb-12 max-w-xl mx-auto space-y-4 text-left">
-            <label class="block font-semibold text-gray-700" for="nameInput">Nama</label>
-            <input id="nameInput" type="text" required placeholder="Masukkan nama" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500" />
-
-            <label class="block font-semibold text-gray-700" for="messageInput">Ucapan & Doa</label>
-            <textarea id="messageInput" rows="3" required placeholder="Tulis ucapan & doa Anda" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
-
-            <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded-md transition">Kirim</button>
-        </form>
-
-        <div id="messagesList" class="space-y-6 px-4 max-h-[500px] overflow-y-auto">
-            <!-- Dummy initial messages -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-            <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                M
                 </div>
-                <div class="flex-1 text-left">
-                <h4 class="font-semibold text-gray-800">Misa</h4>
-                <p class="text-gray-600 mt-2">Best Wishes</p>
-                <p class="text-sm text-gray-400 mt-2">22 September 2025</p>
+
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    Y
+                    </div>
+                    <div class="flex-1 text-left">
+                    <h4 class="font-semibold text-gray-800">Yeni cantikkkk!!</h4>
+                    <p class="text-gray-600 mt-2">
+                        Selamat menempuh hidup baru bang arii, gamau keduluan bang rahul yaa,
+                        mknya lngsng gas🙏, semoga langgeng ya bangg sampe tuaa
+                    </p>
+                    <p class="text-sm text-gray-400 mt-2">26 Juni 2025</p>
+                    </div>
+                </div>
                 </div>
             </div>
-            </div>
 
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-            <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                N
-                </div>
-                <div class="flex-1 text-left">
-                <h4 class="font-semibold text-gray-800">No Name</h4>
-                <p class="text-gray-600 mt-2">Test</p>
-                <p class="text-sm text-gray-400 mt-2">30 Juni 2025</p>
-                </div>
-            </div>
-            </div>
+            <script>
+                const form = document.getElementById('wishForm');
+                const messagesList = document.getElementById('messagesList');
 
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-            <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                Y
-                </div>
-                <div class="flex-1 text-left">
-                <h4 class="font-semibold text-gray-800">Yeni cantikkkk!!</h4>
-                <p class="text-gray-600 mt-2">
-                    Selamat menempuh hidup baru bang arii, gamau keduluan bang rahul yaa,
-                    mknya lngsng gas🙏, semoga langgeng ya bangg sampe tuaa
-                </p>
-                <p class="text-sm text-gray-400 mt-2">26 Juni 2025</p>
-                </div>
-            </div>
-            </div>
+                form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('nameInput').value.trim();
+                const message = document.getElementById('messageInput').value.trim();
+                if (!name || !message) return;
+
+                const initial = name.charAt(0).toUpperCase();
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('id-ID', {day: 'numeric', month: 'long', year: 'numeric'});
+
+                const newCard = document.createElement('div');
+                newCard.className = 'bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg';
+                newCard.innerHTML = `
+                    <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        ${initial}
+                    </div>
+                    <div class="flex-1 text-left">
+                        <h4 class="font-semibold text-gray-800">${name}</h4>
+                        <p class="text-gray-600 mt-2">${message}</p>
+                        <p class="text-sm text-gray-400 mt-2">${dateStr}</p>
+                    </div>
+                    </div>
+                `;
+                messagesList.prepend(newCard);
+                form.reset();
+                });
+            </script>
+            </section>
+            <!-- Footer -->
+           <footer class="relative min-h-screen overflow-hidden">
+            <!-- 🎥 Video Background -->
+            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="tampilan06.mp4" type="video/mp4" />
+                Browser kamu tidak mendukung video ini.
+            </video>
+            </footer>
+
+            <script>
+            const footerVideo = document.getElementById('footerVideo');
+
+            const observerFooter = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    footerVideo.play();
+                } else {
+                    footerVideo.pause();
+                    footerVideo.currentTime = 0;
+                }
+                });
+            }, { threshold: 0.3 });
+
+            observerFooter.observe(document.getElementById('footer'));
+            </script>
+
         </div>
 
         <script>
-            const form = document.getElementById('wishForm');
-            const messagesList = document.getElementById('messagesList');
+            // Loading Screen
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    const loading = document.getElementById('loading');
+                    loading.classList.add('fade-out');
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 500);
+                }, 2000);
+            });
 
-            form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('nameInput').value.trim();
-            const message = document.getElementById('messageInput').value.trim();
-            if (!name || !message) return;
+            // Get guest name from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestName = urlParams.get('to') || 'Bapak/Ibu/Saudara/i';
+            document.getElementById('guestName').textContent = decodeURIComponent(guestName);
 
-            const initial = name.charAt(0).toUpperCase();
-            const now = new Date();
-            const dateStr = now.toLocaleDateString('id-ID', {day: 'numeric', month: 'long', year: 'numeric'});
+            // Open invitation button
+            document.getElementById('openInvitation').addEventListener('click', function() {
+                document.getElementById('cover').style.display = 'none';
+                const mainContent = document.getElementById('mainContent');
+                mainContent.classList.remove('hidden');
+                mainContent.classList.add('fade-in');
+                document.getElementById('musicBtn').style.display = 'block';
+                document.getElementById('mainNav').classList.remove('hidden');
+            });
 
-            const newCard = document.createElement('div');
-            newCard.className = 'bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg';
-            newCard.innerHTML = `
-                <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    ${initial}
-                </div>
-                <div class="flex-1 text-left">
-                    <h4 class="font-semibold text-gray-800">${name}</h4>
-                    <p class="text-gray-600 mt-2">${message}</p>
-                    <p class="text-sm text-gray-400 mt-2">${dateStr}</p>
-                </div>
-                </div>
-            `;
-            messagesList.prepend(newCard);
-            form.reset();
+            // Music toggle button
+            const backSound = document.getElementById('backSound');
+        const musicBtn = document.getElementById('musicBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        const openInvitationBtn = document.getElementById('openInvitation');
+
+        openInvitationBtn.addEventListener('click', () => {
+            // Main invitation dibuka
+            backSound.play().catch(() => {
+                // Jika autoplay diblok, tidak terjadi apa2
+            });
+            musicBtn.style.display = 'block';  // Tampilkan tombol musik
+        });
+
+        musicBtn.addEventListener('click', () => {
+            if (backSound.paused) {
+                backSound.play();
+                musicIcon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+                musicBtn.style.borderBottom = 'none'; // Hilangkan garis bawah saat musik nyala
+            } else {
+                backSound.pause();
+                musicIcon.innerHTML = '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>';
+                musicBtn.style.borderBottom = '2px solid #ec4899'; // Tambah garis bawah pink saat musik mati
+            }
+        });
+
+            // Smooth scrolling for navbar links
+            document.querySelectorAll('nav#mainNav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         </script>
-        </section>
-        <!-- Footer -->
-        <footer class="w-full">
-            <img src="footer1.png" alt="Footer" class="w-full object-cover" />
-        </footer>
-    </div>
-
-    <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const loading = document.getElementById('loading');
-                loading.classList.add('fade-out');
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                }, 500);
-            }, 2000);
-        });
-
-        // Get guest name from URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const guestName = urlParams.get('to') || 'Bapak/Ibu/Saudara/i';
-        document.getElementById('guestName').textContent = decodeURIComponent(guestName);
-
-        // Open invitation button
-        document.getElementById('openInvitation').addEventListener('click', function() {
-            document.getElementById('cover').style.display = 'none';
-            const mainContent = document.getElementById('mainContent');
-            mainContent.classList.remove('hidden');
-            mainContent.classList.add('fade-in');
-            document.getElementById('musicBtn').style.display = 'block';
-            document.getElementById('mainNav').classList.remove('hidden');
-        });
-
-        // Music toggle button
-        const backSound = document.getElementById('backSound');
-    const musicBtn = document.getElementById('musicBtn');
-    const musicIcon = document.getElementById('musicIcon');
-    const openInvitationBtn = document.getElementById('openInvitation');
-
-    openInvitationBtn.addEventListener('click', () => {
-        // Main invitation dibuka
-        backSound.play().catch(() => {
-            // Jika autoplay diblok, tidak terjadi apa2
-        });
-        musicBtn.style.display = 'block';  // Tampilkan tombol musik
-    });
-
-    musicBtn.addEventListener('click', () => {
-        if (backSound.paused) {
-            backSound.play();
-            musicIcon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
-            musicBtn.style.borderBottom = 'none'; // Hilangkan garis bawah saat musik nyala
-        } else {
-            backSound.pause();
-            musicIcon.innerHTML = '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>';
-            musicBtn.style.borderBottom = '2px solid #ec4899'; // Tambah garis bawah pink saat musik mati
-        }
-    });
-
-        // Smooth scrolling for navbar links
-        document.querySelectorAll('nav#mainNav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
+    </body>
 </html>
