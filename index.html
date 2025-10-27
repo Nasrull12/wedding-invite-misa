@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Undangan Pernikahan - Sarah & Ahmad</title>
+    <title>Undangan Pernikahan - Novita Sari & Misa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
@@ -35,8 +35,6 @@
         .music-btn:hover {
             transform: scale(1.1);
         }
-
-
 </style>
 </head>
     <body class="bg-gradient-to-br from-pink-100 via-purple-50 to-indigo-100 flower-bg">
@@ -72,7 +70,7 @@
                 <div class="bg-white/50 p-2 rounded-t-[80px] shadow-lg w-full absolute bottom-0 left-0 z-20 backdrop-blur-md">
                     <div class="max-w-md mx-auto text-center">
                         <p class="text-gray-600 mb-2">Kepada Yth.</p>
-                        <p class="text-lg font-semibold text-gray-800 mb-6" id="guestName">Bapak/Ibu/Saudara/i</p>
+                        <p class="text-lg font-semibold text-gray-800 mb-6" id="guestName"></p>
                         <button id="openInvitation" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 btn-animate pulse-heart inline-flex items-center justify-center space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8a9 9 0 100-18 9 9 0 000 18z" />
@@ -375,50 +373,30 @@
                 </div>
             </section>
 
-<section id="gift" class="relative min-h-screen overflow-hidden flex flex-col items-center justify-center p-6 text-center space-y-6">
+            <section id="gift" class="relative min-h-screen overflow-hidden flex flex-col items-center justify-center p-6 text-center space-y-6">
 
-  <!-- 🎥 Video Background -->
-  <video id="giftVideo" muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-    <source src="tampilan05.mp4" type="video/mp4" />
-    Browser kamu tidak mendukung video ini.
-  </video>
+            <!-- 🎥 Video Background -->
+            <video id="giftVideo" muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="tampilan05.mp4" type="video/mp4" />
+                Browser kamu tidak mendukung video ini.
+            </video>
+            </section>
 
-  <!-- 🌫️ Optional: overlay tipis biar teks kebaca -->
-<!-- <div class="absolute inset-0 bg-black/20 z-0"></div> -->
+            <script>
+            const videoGift = document.getElementById('giftVideo');
+            const observerGift = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    videoGift.play();
+                } else {
+                    videoGift.pause();
+                    videoGift.currentTime = 0;
+                }
+                });
+            }, { threshold: 0.5 });
 
-  <!-- ✨ Konten Tombol -->
-  <!-- <div class="relative z-10 flex flex-col items-center gap-4">
-
-    <button onclick="navigator.clipboard.writeText('7207452526')"
-      class="text-lg text-white font-semibold bg-pink-600/80 hover:bg-pink-700/90 px-6 py-2 rounded-full transition duration-300 shadow-md">
-      Copy Rekening BSI - Novita Sari
-    </button>
-
-    <button onclick="navigator.clipboard.writeText('5222288428')"
-      class="text-lg text-white font-semibold bg-blue-600/80 hover:bg-blue-700/90 px-6 py-2 rounded-full transition duration-300 shadow-md">
-      Copy Rekening BCA - Misa
-    </button>
-
-  </div> -->
-</section>
-
-
-<script>
-  const videoGift = document.getElementById('giftVideo');
-  const observerGift = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        videoGift.play();
-      } else {
-        videoGift.pause();
-        videoGift.currentTime = 0;
-      }
-    });
-  }, { threshold: 0.5 });
-
-  observerGift.observe(document.getElementById('gift'));
-</script>
-
+            observerGift.observe(document.getElementById('gift'));
+            </script>
 
             <section  id="ucapan" class="py-16 px-4 bg-[#F2AEBB] max-w-4xl mx-auto">
             <h2 class="script-font text-4xl font-bold text-center text-gray-800 mb-12">Ucapan & Doa</h2>
@@ -435,81 +413,8 @@
 
             <div id="messagesList" class="space-y-6 px-4 max-h-[500px] overflow-y-auto">
                 <!-- Dummy initial messages -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    M
-                    </div>
-                    <div class="flex-1 text-left">
-                    <h4 class="font-semibold text-gray-800">Misa</h4>
-                    <p class="text-gray-600 mt-2">Best Wishes</p>
-                    <p class="text-sm text-gray-400 mt-2">22 September 2025</p>
-                    </div>
-                </div>
-                </div>
-
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    N
-                    </div>
-                    <div class="flex-1 text-left">
-                    <h4 class="font-semibold text-gray-800">No Name</h4>
-                    <p class="text-gray-600 mt-2">Test</p>
-                    <p class="text-sm text-gray-400 mt-2">30 Juni 2025</p>
-                    </div>
-                </div>
-                </div>
-
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    Y
-                    </div>
-                    <div class="flex-1 text-left">
-                    <h4 class="font-semibold text-gray-800">Yeni cantikkkk!!</h4>
-                    <p class="text-gray-600 mt-2">
-                        Selamat menempuh hidup baru bang arii, gamau keduluan bang rahul yaa,
-                        mknya lngsng gas🙏, semoga langgeng ya bangg sampe tuaa
-                    </p>
-                    <p class="text-sm text-gray-400 mt-2">26 Juni 2025</p>
-                    </div>
-                </div>
-                </div>
             </div>
 
-            <script>
-                const form = document.getElementById('wishForm');
-                const messagesList = document.getElementById('messagesList');
-
-                form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = document.getElementById('nameInput').value.trim();
-                const message = document.getElementById('messageInput').value.trim();
-                if (!name || !message) return;
-
-                const initial = name.charAt(0).toUpperCase();
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('id-ID', {day: 'numeric', month: 'long', year: 'numeric'});
-
-                const newCard = document.createElement('div');
-                newCard.className = 'bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg';
-                newCard.innerHTML = `
-                    <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                        ${initial}
-                    </div>
-                    <div class="flex-1 text-left">
-                        <h4 class="font-semibold text-gray-800">${name}</h4>
-                        <p class="text-gray-600 mt-2">${message}</p>
-                        <p class="text-sm text-gray-400 mt-2">${dateStr}</p>
-                    </div>
-                    </div>
-                `;
-                messagesList.prepend(newCard);
-                form.reset();
-                });
-            </script>
             </section>
             <!-- Footer -->
            <footer class="relative min-h-screen overflow-hidden">
@@ -552,9 +457,11 @@
             });
 
             // Get guest name from URL parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            const guestName = urlParams.get('to') || 'Bapak/Ibu/Saudara/i';
-            document.getElementById('guestName').textContent = decodeURIComponent(guestName);
+            const path = window.location.pathname;
+            const guestNameFromPath = path.length > 1 ? path.substring(1) : 'Bapak/Ibu/Saudara/i';
+            document.getElementById('guestName').textContent = decodeURIComponent(guestNameFromPath) || 'Bapak/Ibu/Saudara/i';
+
+
 
             // Open invitation button
             document.getElementById('openInvitation').addEventListener('click', function() {
@@ -606,5 +513,91 @@
                 });
             });
         </script>
+        <!-- 🌸 Firebase Firestore Ucapan -->
+      <!-- 🌸 Firebase Firestore Ucapan -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, doc, setDoc, getDoc, onSnapshot, query, orderBy, serverTimestamp } 
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// 🔧 Konfigurasi Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyDWFdwpk4cNpuY-jF_ZA_ZeTTx8jNmDMg0",
+    authDomain: "undangan-novita-misa.firebaseapp.com",
+    projectId: "undangan-novita-misa",
+    storageBucket: "undangan-novita-misa.firebasestorage.app",
+    messagingSenderId: "903389730275",
+    appId: "1:903389730275:web:5366b285256d8e1e4a7cd6"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const messagesRef = collection(db, "ucapan"); // Koleksi ucapan
+
+const form = document.getElementById("wishForm");
+const messagesList = document.getElementById("messagesList");
+
+// ✍️ Kirim ucapan (nama sebagai ID)
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("nameInput").value.trim();
+    const message = document.getElementById("messageInput").value.trim();
+
+    if (!name || !message) return;
+
+    const docRef = doc(db, "ucapan", name);
+
+    // Cek dulu apakah nama sudah ada
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+        alert("Nama sudah digunakan, gunakan nama lain!");
+        return;
+    }
+
+    try {
+        await setDoc(docRef, {
+            name: name,
+            message: message,
+            createdAt: serverTimestamp()
+        });
+        form.reset();
+    } catch (error) {
+        alert("Terjadi error saat mengirim ucapan");
+        console.error("Gagal kirim ucapan:", error);
+    }
+});
+
+// 💬 Ambil & tampilkan ucapan realtime
+const q = query(messagesRef, orderBy("createdAt", "desc"));
+onSnapshot(q, (snapshot) => {
+    messagesList.innerHTML = "";
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+        const date = data.createdAt?.toDate
+            ? data.createdAt.toDate().toLocaleDateString("id-ID", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+            })
+            : "Baru saja";
+
+        const initial = data.name.charAt(0).toUpperCase();
+
+        messagesList.innerHTML += `
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+            <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                ${initial}
+                </div>
+                <div class="flex-1 text-left">
+                <h4 class="font-semibold text-gray-800">${data.name}</h4>
+                <p class="text-gray-600 mt-2">${data.message}</p>
+                <p class="text-sm text-gray-400 mt-2">${date}</p>
+                </div>
+            </div>
+            </div>`;
+    });
+});
+</script>
     </body>
 </html>
